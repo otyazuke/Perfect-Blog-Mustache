@@ -1,2 +1,2 @@
-cron: swift build
-cron: ./.build/debug/Perfect-Blog-Mustache
+web swift build
+web ./.build/debug/Perfect-Blog-Mustache
