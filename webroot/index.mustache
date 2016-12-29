@@ -14,13 +14,55 @@
 			Blog Posts
 		</h3>
 	</div>
+
 	<div id="content">
 		{{#posts}}
-		<div style="padding-bottom: 20px; border-bottom: 1px solid black">
-			<h4><a href="/story/{{titlesanitized}}">{{title}}</a></h4>
-			<div>{{synopsis}}</div>
+		<div class="chat-box">
+			<div class="face-area">
+				<div class="face-image"></div>
+				<div class="name">{{name}}</div>
+			</div>
+			<div class="chat-area">
+				<div class="chat-hukidashi">
+					<div>{{body}}</div>
+				</div>
+			</div>
 		</div>
 		{{/posts}}
 	</div>
+
+	<div class="postForm">
+		<form method="post" action="addMessage">
+			<div id="textArea">
+				<p>テキスト: </p>
+				<textarea name="body" rows="4" cols="40"></textarea><br>
+			</div>
+			<br>
+			<div id="nameArea">
+				<p>名前: </p>
+				<input type="text" name="name" size="40"><br>
+			</div>
+			<input id="sendButton" type="submit" value="送信">
+		</form>
+	</div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

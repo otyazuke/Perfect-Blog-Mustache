@@ -9,15 +9,109 @@
 		background-color: black;
 		color: white;
 	}
-	#content {
-		padding: 20px;
+
+
+	/* チャットボックス */
+	.chat-box {
+		display: flex;
+		height: auto;
+		overflow: hidden; /*floatの解除*/
+		margin: 20px;
+	}
+	.chat-box:nth-child(odd){
+		flex-direction: row-reverse;
 	}
 
-	a {
-		text-decoration: none;
+	/* 画像名前 */
+	.face-area{
+		width: 120px;
+	}
+	.face-image {
+		margin-left: 10px;
+		width: 100px;
+		height: 100px;
+	}
+	.chat-box:nth-child(even) .face-area .face-image {
+		background: url('./swiftLogo.jpg');
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+	.chat-box:nth-child(odd) .face-area .face-image {
+		background: url('./perfect-2.0.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+	.name{
+		text-align: center;
+		margin-top: 3px;
 	}
 
-	a:visited, a:link {
-		color: orange
+	/* コメント */
+	.chat-area {
+		width: 350px;
 	}
+	.chat-box:nth-child(odd) .chat-area {
+		margin-right: 30px;
+	}
+	.chat-box:nth-child(even) .chat-area {
+		margin-left: 30px;
+	}
+	.chat-hukidashi {
+		display: inline-block; /*コメントの文字数に合わせて可変*/
+		padding: 15px 20px;
+		margin-top: 8px;
+		border-radius: 10px;
+		position: relative;
+	}
+	.chat-hukidashi:after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		margin-top: -10px;
+		display: block;
+		width: 0px;
+		height: 0px;
+		border-style: solid;
+	}
+	.chat-box:nth-child(odd) .chat-area .chat-hukidashi {
+		float: right;
+	}
+	.chat-box:nth-child(odd) .chat-area .chat-hukidashi:after {
+		right: -10px;
+		border-width: 10px 0 10px 10px;
+		border-color: transparent transparent transparent #BCF5A9;
+	}
+	.chat-box:nth-child(even) .chat-area .chat-hukidashi:after {
+		left: -10px;
+		border-width: 10px 10px 10px 0;
+		border-color: transparent #D9F0FF transparent transparent;
+	}
+	.chat-box:nth-child(odd) .chat-area .chat-hukidashi {
+		background-color: #BCF5A9;
+	}
+	.chat-box:nth-child(even) .chat-area .chat-hukidashi {
+		background-color: #D9F0FF;
+	}
+
+
+	/* フォーム */
+	.postForm {
+		padding: 50px 0;
+		background-color: #999;
+	}
+	.postForm form{
+		width: 400px;
+		margin: 0 auto;
+	}
+	.postForm form #textArea textarea {
+		width: 400px;
+	}
+	.postForm form #nameArea input {
+		width: 400px;
+	}
+	input#sendButton {
+		margin-top: 30px;
+	}
+
+
 </style>
